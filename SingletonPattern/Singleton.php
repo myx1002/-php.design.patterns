@@ -36,8 +36,8 @@ class Singleton
     private function __construct()
     {
         try {
-            echo '实例化数据库'. PHP_EOL;
-            $this->pdo = new PDO('mysql:host=localhost;dbname=hlyes_v1_file;port=12306;', 'kenny', 'hlyun123456');
+            echo '开始链接数据库......'. PHP_EOL;
+            $this->pdo = new PDO('mysql:host=localhost;dbname=larabbs;port=3306;', 'root', '');
         }catch (PDOException $exception) {
             trigger_error('数据库连接失败'.$exception->getMessage(), E_USER_ERROR);
         }
@@ -63,8 +63,20 @@ class Singleton
         }
         return self::$_instance;
     }
+
+    public function fetchUser()
+    {
+        $result = $this->pdo->query("SELECT id,name,email from users LIMIT 1");
+        print_r($result->fetchAll(PDO::FETCH_ASSOC));
+    }
 }
 
+echo '第一次获取实例化对象' . PHP_EOL;
+$instance1 = Singleton::getInstance();
+echo 'instance1实例化完毕' . PHP_EOL;
+echo '---------------------------------' . PHP_EOL;
+echo '第二次获取实例化对象' . PHP_EOL;
+$instance2 = Singleton::getInstance();
+echo 'instance2实例化完毕，无需重新实例化，直接获取第一次实例化的对象即可' . PHP_EOL;
 
-$pdo = Singleton::getInstance();
-$pdo = Singleton::getInstance();
+$instance1->fetchUser();
