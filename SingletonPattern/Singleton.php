@@ -64,6 +64,9 @@ class Singleton
         return self::$_instance;
     }
 
+    /**
+     * 查询数据
+     */
     public function fetchUser()
     {
         $result = $this->pdo->query("SELECT id,name,email from users LIMIT 1");
