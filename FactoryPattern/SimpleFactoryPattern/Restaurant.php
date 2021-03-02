@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * 抽象角色，所有对象的父类
+ * 它负责描述所有实现类需要实现的功能方法
+ * Interface Restaurant
+ */
 interface Restaurant
 {
     /** 下单 **/
@@ -13,7 +18,7 @@ interface Restaurant
 }
 
 /**
- * 汉堡包餐厅
+ * 具体实例对象：汉堡包餐厅
  * Class HamburgerRestaurant
  */
 class HamburgerRestaurant implements Restaurant
@@ -39,7 +44,7 @@ class HamburgerRestaurant implements Restaurant
 }
 
 /**
- * 披萨餐厅
+ * 具体实例对象：披萨餐厅
  * Class PizzaRestaurant
  */
 class PizzaRestaurant implements Restaurant

@@ -52,10 +52,10 @@ class SimpleRestaurantFactory
 $restaurant = new SimpleRestaurantFactory();
 
 // pizza餐厅
-$pizzaRestaurant = $restaurant->getRestaurant('pizza');
-$pizzaRestaurant->placeOrder();
-$pizzaRestaurant->mealPreparation();
-$pizzaRestaurant->dishServe();
+$pizzaRestaurant = $restaurant->getRestaurant('pizza');  // 获取实例
+$pizzaRestaurant->placeOrder();  // 下单
+$pizzaRestaurant->mealPreparation();  // 备餐
+$pizzaRestaurant->dishServe();  // 上菜
 
 echo '感觉有点吃不饱要咋整......' . PHP_EOL;
 
@@ -65,3 +65,4 @@ $hamburgerRestaurant->placeOrder();
 $hamburgerRestaurant->mealPreparation();
 $hamburgerRestaurant->dishServe();
 
+echo '溜了溜了，撑死了......' . PHP_EOL;
