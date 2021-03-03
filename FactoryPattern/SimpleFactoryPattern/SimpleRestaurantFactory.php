@@ -1,9 +1,9 @@
 <?php
 
-include_once "./Restaurant.php";
+include_once "../Restaurant.php";
 
 /**
- * 简单餐厅工厂
+ * 简单工厂模式
  *
  * 概念：简单工厂模式属于`创建型模式`，通过专门定义一个工厂类来负责创建其他类的实例，被创建的实例通常具有相同的父类
  *       如下面的例子：HamburgerRestaurant(汉堡包餐厅)和PizzaRestaurant(披萨餐厅)都实现了Restaurant类，而且都由SimpleRestaurantFactory(工厂类)来实例化它们。
@@ -27,7 +27,7 @@ include_once "./Restaurant.php";
  *   ②静态方法简单工厂（StaticRestaurantFactory.php）：
  *      进一步改进，对工厂方法置为静态方法，无需创建实例，直接调用方法即可。
  *
- *
+ * 简单餐厅工厂
  * Class SimpleRestaurantFactory
  */
 class SimpleRestaurantFactory
