@@ -1,6 +1,6 @@
 <?php
 
-include_once "../Restaurant.php";
+include_once "./Restaurant.php";
 
 /**
  * 静态方法简单工厂

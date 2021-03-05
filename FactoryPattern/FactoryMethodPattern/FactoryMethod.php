@@ -1,6 +1,6 @@
 <?php
 
-include_once "../Restaurant.php";
+include_once "./Hamburger.php";
 
 
 /**
@@ -11,71 +11,55 @@ include_once "../Restaurant.php";
  *     这样一旦需要新增角色(Product)时，直接增加新的工厂实现类即可(ProductFactory)，无需再修改旧的代码了。
  *
  *
- * 概念：简单工厂
- *
- *
  * 工厂接口类
  * Interface RestaurantFactory
  */
 interface RestaurantFactory
 {
     /**
-     * 获取餐厅实例
+     * 获取汉堡包实例
      * @return mixed
      */
-    public function getRestaurant();
+    public function getHamburger();
 }
 
 /**
- * 汉堡包餐厅工厂
+ * 麦当劳餐厅工厂
  * Class HamburgerRestaurantFactory
  */
-class HamburgerRestaurantFactory implements RestaurantFactory
+class McDonaldRestaurantFactory implements RestaurantFactory
 {
 
     /**
      * 获取汉堡包餐厅实例
      * @return mixed
      */
-    public function getRestaurant()
+    public function getHamburger()
     {
-        return new HamburgerRestaurant();
+        return new McDonaldHamburger();
     }
 }
 
 /**
- * 披萨餐厅工厂
+ * KFC餐厅工厂
  * Class PizzaRestaurantFactory
  */
-class PizzaRestaurantFactory implements RestaurantFactory
+class KFCRestaurantFactory implements RestaurantFactory
 {
 
     /**
      * 获取披萨餐厅实例
      * @return mixed
      */
-    public function getRestaurant()
+    public function getHamburger()
     {
-        return new PizzaRestaurant();
+        return new KFCHamburger();
     }
 }
 
 
+$mcDonaldRestaurantFactory = new McDonaldRestaurantFactory();
+$mcDonaldRestaurant = $mcDonaldRestaurantFactory->getHamburger();  // 获取实例
+$mcDonaldRestaurant->getName();
+$mcDonaldRestaurant->getMaterial();
 
-// pizza餐厅
-$pizzaRestaurant = new PizzaRestaurantFactory();
-$pizzaRestaurant = $pizzaRestaurant->getRestaurant();  // 获取实例
-$pizzaRestaurant->placeOrder();  // 下单
-$pizzaRestaurant->mealPreparation();  // 备餐
-$pizzaRestaurant->dishServe();  // 上菜
-
-echo '感觉有点吃不饱要咋整......' . PHP_EOL;
-
-// hamburger餐厅
-$hamburgerRestaurant = new HamburgerRestaurantFactory();
-$hamburgerRestaurant = $hamburgerRestaurant->getRestaurant();
-$hamburgerRestaurant->placeOrder();
-$hamburgerRestaurant->mealPreparation();
-$hamburgerRestaurant->dishServe();
-
-echo '溜了溜了，撑死了......' . PHP_EOL;
