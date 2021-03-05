@@ -16,7 +16,7 @@ PHP版的设计模式学习
 
 #### 创建型模式
 
-* 单例模式✔
+* [单例模式](SingletonPattern/Singleton.php) ✔
 
   
 * 简单工厂模式（非23GOF设计模式）✔
@@ -28,7 +28,7 @@ PHP版的设计模式学习
 * [工厂方法模式](FactoryPattern/FactoryMethodPattern/FactoryMethod.php)（可退化为简单工厂模式）✔
   
 
-* 抽象工厂模式
+* [抽象工厂模式](FactoryPattern/AbstractFactortPattern/AbstractFactory.php) ✔
   
 
 * 原型模式

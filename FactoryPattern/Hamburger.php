@@ -24,7 +24,7 @@ class McDonaldHamburger implements Hamburger
     /** 汉堡包名称 **/
     public function getName()
     {
-        echo '这是你的`板烧鸡腿堡`' . PHP_EOL;
+        echo '这是麦当劳的`板烧鸡腿堡`' . PHP_EOL;
     }
 
     /** 汉堡包材料 **/
@@ -44,7 +44,7 @@ class KFCHamburger implements Hamburger
     /** 汉堡包名称 **/
     public function getName()
     {
-        echo '这是你的`奥尔良鸡腿堡`' . PHP_EOL;
+        echo '这是肯德基的`奥尔良鸡腿堡`' . PHP_EOL;
     }
 
     /** 汉堡包材料 **/

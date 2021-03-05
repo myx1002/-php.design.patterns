@@ -1,6 +1,6 @@
 <?php
 
-include_once "./Hamburger.php";
+include_once "../Hamburger.php";
 
 
 /**
@@ -14,7 +14,7 @@ include_once "./Hamburger.php";
  * 工厂接口类
  * Interface RestaurantFactory
  */
-interface RestaurantFactory
+interface HamburgerFactory
 {
     /**
      * 获取汉堡包实例
@@ -27,7 +27,7 @@ interface RestaurantFactory
  * 麦当劳餐厅工厂
  * Class HamburgerRestaurantFactory
  */
-class McDonaldRestaurantFactory implements RestaurantFactory
+class McDonaldHamburgerFactory implements HamburgerFactory
 {
 
     /**
@@ -44,7 +44,7 @@ class McDonaldRestaurantFactory implements RestaurantFactory
  * KFC餐厅工厂
  * Class PizzaRestaurantFactory
  */
-class KFCRestaurantFactory implements RestaurantFactory
+class KFCHamburgerFactory implements HamburgerFactory
 {
 
     /**
@@ -58,7 +58,7 @@ class KFCRestaurantFactory implements RestaurantFactory
 }
 
 
-$mcDonaldRestaurantFactory = new McDonaldRestaurantFactory();
+$mcDonaldRestaurantFactory = new McDonaldHamburgerFactory();
 $mcDonaldRestaurant = $mcDonaldRestaurantFactory->getHamburger();  // 获取实例
 $mcDonaldRestaurant->getName();
 $mcDonaldRestaurant->getMaterial();
