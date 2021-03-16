@@ -31,7 +31,7 @@ PHP版的设计模式学习
 * [抽象工厂模式](FactoryPattern/AbstractFactortPattern/AbstractFactory.php) ✔
   
 
-* 原型模式
+* [原型模式](PrototypePattern/Resume.php) ✔
   
 
 * 建造者模式
