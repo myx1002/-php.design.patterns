@@ -25,7 +25,7 @@ PHP版的设计模式学习
     3. [静态方法简单工厂模式](FactoryPattern/SimpleFactoryPattern/StaticRestaurantFactory.php)
     
 
-* [工厂方法模式](FactoryPattern/FactoryMethodPattern/FactoryMethod.php)（可退化为简单工厂模式）✔
+* [工厂方法模式](FactoryPattern/FactoryMethodPattern/FactoryMethod.php) ✔
   
 
 * [抽象工厂模式](FactoryPattern/AbstractFactortPattern/AbstractFactory.php) ✔
@@ -34,6 +34,4 @@ PHP版的设计模式学习
 * [原型模式](PrototypePattern/Resume.php) ✔
   
 
-* 建造者模式
-
-
+* [建造者(生成器)模式](BuilderPattern/Hamburger.php) ✔
