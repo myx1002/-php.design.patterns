@@ -1,9 +1,13 @@
 <?php
 include_once "./Builder.php";
 
+/**
+ * 产品角色
+ * Class Product
+ */
 class Product
 {
-    private array $steps;
+    private $steps;
 
     public function add($step)
     {
@@ -18,7 +22,10 @@ class Product
     }
 }
 
-
+/**
+ * 指挥者
+ * Class Director
+ */
 class Director
 {
     public function __construct(HamburgerBuilder $builder)
@@ -29,7 +36,7 @@ class Director
 }
 
 
-$builder = new BanshaoHamburgerBuilder();
+$builder  = new BanshaoHamburgerBuilder();
 $director = new Director($builder);
 $product  = $builder->getResult();
 $product->show();
