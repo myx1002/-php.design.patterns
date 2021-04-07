@@ -32,11 +32,11 @@ class Director
     {
         $builder->buildStepA();
         $builder->buildStepB();
+        return $builder->getResult();
     }
 }
 
 
 $builder  = new BanshaoHamburgerBuilder();
 $director = new Director($builder);
-$product  = $builder->getResult();
-$product->show();
+$director->show();
