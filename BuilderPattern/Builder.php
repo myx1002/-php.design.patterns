@@ -8,7 +8,7 @@ include_once "./Hamburger.php";
  * 建造者模式又称为生成器模式，是创建型模式的一种
  * 在程序设计时，一个复杂的对象可能有许多子部件按照一定的步骤组合而成，
  * 如游戏中的不用角色，其性别、个性、体型、样貌、服装等等都有所差异，但是组成方式却大同小异
- * 针对这些由多个部件构成的对象，各个不见可以灵活选择，但是创建步骤都大同小异的情况下，可以选择使用建造者模式。
+ * 针对这些由多个部件构成的对象，各个部件可以灵活选择，但是创建步骤都大同小异的情况下，可以选择使用建造者模式。
  *
  * 概念：
  * 指将一个复杂对象的构造与它的表示分离，使同样的构建过程可以创建不同的表示，这样的设计模式被称为建造者模式。
@@ -56,7 +56,7 @@ interface  HamburgerBuilder
  */
 class BanshaoHamburgerBuilder implements HamburgerBuilder
 {
-    private $product;
+    public $product;
 
     public function __construct()
     {
@@ -86,7 +86,7 @@ class BanshaoHamburgerBuilder implements HamburgerBuilder
  */
 class XueyuHamburgerBuilder implements HamburgerBuilder
 {
-    private $product;
+    public $product;
 
     public function __construct()
     {

@@ -7,7 +7,7 @@ include_once "./Builder.php";
  */
 class Product
 {
-    private $steps;
+    public $steps;
 
     public function add($step)
     {
@@ -28,7 +28,7 @@ class Product
  */
 class Director
 {
-    public function __construct(HamburgerBuilder $builder)
+    public function build(HamburgerBuilder $builder)
     {
         $builder->buildStepA();
         $builder->buildStepB();
@@ -38,5 +38,5 @@ class Director
 
 
 $builder  = new BanshaoHamburgerBuilder();
-$director = new Director($builder);
+$director = (new Director())->build($builder);
 $director->show();

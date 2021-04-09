@@ -35,3 +35,19 @@ PHP版的设计模式学习
   
 
 * [建造者(生成器)模式](BuilderPattern/Hamburger.php) ✔
+
+#### 结构型模式
+
+* [适配器模式](AdapterPattern/Adapter.php) ✔
+
+* 装饰器模式
+
+* 代理模式
+
+* 外观模式
+
+* 桥接模式
+
+* 组合模式
+
+* 享元模式
