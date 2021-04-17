@@ -10,17 +10,32 @@ require_once "./Component.php";
  *
  * 生活中的例子：
  *  像`大话设计模式`中的例子，人打扮其实就是一个装饰的过程，本来我只穿了个裤衩的，然后后面想出门了，又需要穿衣服、裤子、戴个手表什么之类的，
- *  又像我们平时吃手抓饼一样，我们可能会加鸡蛋、火腿、肉松
+ *  又像我们平时吃手抓饼一样，我们可能会加鸡蛋、火腿、肉松等等，而无论加什么，它实际都是一个饼，而加料其实就是对饼的一个装饰。
  *
+ * 与建造者模式的区别
+ *  从上面的例子我们可能会有疑问，这不跟`建造者模式`很类似吗？都是用小配件来组装对象，那二者有啥区别呢？
+ *
+ *  过程稳定性的不同：
+ *  其实我们回看之前学习的`建造者模式`,就能明白，`建造者模式`要求建造的过程是稳定的，是相同的步骤生成不同类型的对象。
+ *  而`装饰器模式`的建造过程是不稳定的，我可以先穿裤子，再穿衣服，反之亦然，
+ *
+ *  模式的不同：
+ *  `装饰器模式`是一个`结构型模式`，主要是对原有对象做一个表面外部的装饰，
+ *  而`建造者模式`属于`创建型模式`，是对某个东西整体框架的建造以及内部稳定架构的组装
+ *
+ *  `装饰器模式`的应用场景：
+ *   1.当需要给一个现有类添加附加职责，而又不能采用生成子类的方法进行扩充时；（注意，是现有的类）
+ *   2.当需要通过对现有的一组基本功能进行排列组合而产生非常多的功能时，采用继承关系很难实现，而采用装饰器模式却很好实现
+ *   3.当对象的功能要求可以动态地添加，也可以再动态地撤销时
  *
  * 概念：
  *  装饰器模式属于结构型模式，指在不改变现有对象结构的情况下，动态地给该对象增加一些职责（即增加其额外功能）的模式，它属于对象结构型模式。
  *  不使用继承而通过关联关系来调用现有类中的方法，达到复用的目的，并使得对象的行为可以灵活变化；
  *
  * 角色：
- *  抽象构件（Component）角色：定义一个抽象接口以规范准备接收附加责任的对象。
+ *  抽象构件（Component）角色：定义一个抽象接口以规范准备接收附加责任的对象。(如果只有一个具体构件角色的话，该抽象类可忽略)
  *  具体构件（ConcreteComponent）角色：实现抽象构件，通过装饰角色为其添加一些职责。
- *  抽象装饰（Decorator）角色：继承抽象构件，并包含具体构件的实例，可以通过其子类扩展具体构件功能。
+ *  抽象装饰（Decorator）角色：继承抽象构件，并包含具体构件的实例，可以通过其子类扩展具体构件功能。（同理）
  *  具体装饰（ConcreteDecorator）角色：实现抽象装饰的相关方法，并给具体构件对象添加附加的职责。
  *
  * 优点：
@@ -31,73 +46,60 @@ require_once "./Component.php";
  * 缺点：
  *  1.装饰器模式会增加许多子类，过度使用会增加程序的复杂性
  *
- * 与建造者模式的区别
+ *
  *
  *
  */
 
 /**
  * Decorator
- * @Description 抽象装饰类（变化类）
- * Class Changer
+ * @Description 抽象装饰类（服饰类）
+ * Class Finery
  */
-class Changer implements Transfrom
+class Finery extends People
 {
-    protected $transfrom;
+    protected $people;
 
-    public function __construct(Transfrom $transfrom)
+    public function __construct(People $people)
     {
-        $this->transfrom = $transfrom;
+        $this->people = $people;
     }
 
     /**
      * @Override
      */
-    public function move()
+    public function show()
     {
-        $this->transfrom->move();
+        $this->people->show();
     }
 }
 
-class Robot extends Changer
+/**
+ * Class TShirt
+ */
+class TShirt extends Finery
 {
-    public function __construct(Transfrom $transfrom)
+    public function show()
     {
-        parent::__construct($transfrom);
-        echo '变成机器人' . PHP_EOL;
-    }
-
-    public function run()
-    {
-        echo '迈开双腿跑起来' . PHP_EOL;
-    }
-
-    public function fight()
-    {
-        echo '咏春、叶问，打你一顿' . PHP_EOL;
+        parent::show();
+        echo '大T恤 ';
     }
 }
 
-class Airplane extends Changer
+/**
+ * Class TShirt
+ */
+class BigTrouser extends Finery
 {
-    public function __construct(Transfrom $transfrom)
+    public function show()
     {
-        parent::__construct($transfrom);
-        echo '变成飞机' . PHP_EOL;
-    }
-
-    public function fly()
-    {
-        echo '起飞起飞！' . PHP_EOL;
+        parent::show();
+        echo '跨裤 ';
     }
 }
 
-$camaro = new Car('大黄蜂');
-$camaro->move();
-echo '---------------' . PHP_EOL;
-$robot  = new Robot($camaro);
-$robot->run();
-$robot->fight();
-echo '---------------' . PHP_EOL;
-$airplane  = new Airplane($camaro);
-$airplane->fly();
+$people = new People('小明');
+
+$tshirt = new TShirt($people);
+$bigTrouser = new BigTrouser($tshirt);
+$bigTrouser->show();

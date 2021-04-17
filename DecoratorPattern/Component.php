@@ -2,30 +2,30 @@
 
 /**
  * Component
- * @Descript 抽象构件类(变形金刚)
- * Interface Transfrom
+ * @Descript 抽象构件类
+ * 如果只有一个具体构件角色的话，该抽象类可忽略
+ * Interface Component
  */
-interface Transfrom
-{
-    public function move();
-}
+//interface Component
+//{
+//    public function show();
+//}
 
 /**
  * ConcreteComponent
  * @Descript 具体构件类（变形金刚汽车类）
- * Class TransfromCar
+ * Class People
  */
-class Car implements Transfrom
+class People
 {
     private $name;
     public function __construct($name)
     {
         $this->name = $name;
-        echo $this->name . '是一辆汽车' . PHP_EOL;
     }
 
-    public function move()
+    public function show()
     {
-        echo '在陆地上移动' . PHP_EOL;
+        echo $this->name . '装扮：';
     }
 }
