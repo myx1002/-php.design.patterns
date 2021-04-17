@@ -13,7 +13,7 @@
 
 /**
  * ConcreteComponent
- * @Descript 具体构件类（变形金刚汽车类）
+ * @Descript 具体构件类
  * Class People
  */
 class People

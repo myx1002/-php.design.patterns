@@ -42,7 +42,7 @@ PHP版的设计模式学习
 
 * [适配器模式](AdapterPattern/Adapter.php) ✔
 
-* 装饰器模式
+* [装饰器模式](DecoratorPattern/Decorator.php) ✔
 
 * 代理模式
 
