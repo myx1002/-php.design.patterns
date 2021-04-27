@@ -44,7 +44,7 @@ PHP版的设计模式学习
 
 * [装饰器模式](DecoratorPattern/Decorator.php) ✔
 
-* [代理模式](ProxyPattern/Proxy.php)
+* [代理模式](ProxyPattern/Proxy.php) ✔
 
 * 外观模式
 
