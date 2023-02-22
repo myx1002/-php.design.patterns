@@ -12,7 +12,8 @@ PHP版的设计模式学习
 
 访问码：x620
 
-语言中文网：http://c.biancheng.net/view/1317.html
+语言中文网：http://c.biancheng.net/view/1317.html（失效）
+别人整理的地址：https://gitee.com/zhuang-kang/DesignPattern#13%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F
 
 ### 开始学习吧！
 
